@@ -1,38 +1,278 @@
-.App {
+:root {
+  --top-space: calc(160px + 50px);
+  --black: #000000;
+  --smallerwidth: calc(100vw - 80px * 2 - 14px);
+  --smallwidth: calc(100vw - 40px * 2 - 14px)
+}
+
+html {
+  padding: 0px max(80px, calc(calc(100vw - 1280px)/2));
+  background-color: #E5E5E5;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-size: 45px;
+  line-height: 52.73px;
+  color: var(--black);
   text-align: center;
+  margin: 0px;
+  margin-bottom: 13px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1:hover {
+  text-decoration: underline;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h2 {
+  font-size: 30px;
+  line-height: 35.16px;
+  font-weight: 400;
+  color: var(--black);
+  text-align: center;
+  margin: 0px;
+  margin-bottom: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h2:hover {
+  text-decoration: underline;
+}
+
+h3 {
+  font-size: 25px;
+  line-height: 29.3px;
+  color: var(--black);
+  margin-bottom: 13px;
+  margin-top: 0px;
+}
+
+h3:hover {
+  text-decoration: underline;
+}
+
+header {
+  position: fixed;
+  top: 0px;
+  width: 1280px;
+  height: var(--top-space);
+}
+
+header > div:first-child {
+  height: calc(160 * 100% / calc(160 + 50));
+  background-color: #FFFFFF;
+  color: var(--black);
+  padding: 27px 0px;
+  box-sizing: border-box;
+}
+
+header > div:last-child {
+  height: calc(50 * 100% / calc(160 + 50));
+  background-color: #333333;
+  color: #FFFFFF;
+  font-size: 20px;
+  line-height: 23.44px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  padding: 14px 25px;
+  box-sizing: border-box;
+}
+
+header span {
+  height: 23.44px;
+}
+
+header span:hover {
+  text-decoration: underline;
+}
+
+header span:not(:last-child) {
+  margin-right: 60px;
+}
+
+main {
+  box-sizing: border-box;
+  padding: 20px 0px 39px;
+  margin-top: var(--top-space);
+  width: 1280px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+}
+
+.TitleHeading {
+  width: 950px;
+  height: 406px;
+  background-color: #FFFFFF;
+  padding: 23px 30px;
+  margin: 0px 30px 20px 0px; 
+  font-size: 18px;
+  line-height: 21.09px;
+  box-sizing: border-box;
+  overflow: scroll;
+}
+
+.TitleHeading > div {
+  margin-bottom: 23px;
+}
+
+.TitleHeading > .EmptyShape-grey {
+  background-color: #C4C4C4;
+  height: 150px;
+  width: 890px;
+  border: none;
+  margin-bottom: 28px;
+}
+
+.TitleHeading > p {
+  height: 95px;
+}
+
+.AboutMe {
+  width: 300px;
+  height: 346px;
+  background-color: #FFFFFF;
+  padding: 23px;
+  font-size: 18px;
+  line-height: 21.09px;
+  box-sizing: border-box;
+}
+
+.AboutMe > .EmptyShape-grey {
+  background-color: #C4C4C4;
+  height: 179px;
+  width: 255px;
+  border: none;
+  margin-bottom: 28px;
+}
+
+footer {
+  width: 1280px;
+  height: 63px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background-color: #DDDDDD;
+  font-size: 18px;
+  line-height: 21.09px;
+  /* padding-bottom: 2px; */
 }
 
-.App-link {
-  color: #61dafb;
+footer > div {
+  margin-bottom: 2px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.Bold {
+  font-weight: bold;
+}
+
+@media (max-width: calc(1280px + 80px * 2)) {
+  html {
+    padding-left: 80px;
+    padding-right: 80px
   }
-  to {
-    transform: rotate(360deg);
+  header {
+    width: var(--smallerwidth);
+  }
+  main {
+    width: var(--smallerwidth)
+  }
+  footer {
+    width: var(--smallerwidth);
+    flex-direction: row;
+  }
+  main > div {
+    width: 100%
+  }
+  .AboutMe {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .TitleHeading {
+    width: 100%;
+    margin: 0px;
+    margin-bottom: 20px;
+  }
+  .TitleHeading > .EmptyShape-grey {
+    width: 100%
+  }
+  .AboutMe > .EmptyShape-grey {
+    width: 100%
+  }
+}
+
+@Media (max-width: 878px) {
+  h1 {
+    font-size: 36px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  header > div:last-child {
+    font-size: 16px;
+  }
+  .TitleHeading {
+    font-size: 14px;
+  }
+  .AboutMe {
+    font-size: 14px;
+  }
+  footer {
+    font-size: 14px;
+  }
+  .TitleHeading {
+    height: 436px;
+  }
+  .TitleHeading > p {
+    height: 125px;
+  }
+}
+
+@Media (max-width: 580px) {
+  html {
+    padding-left: 40px;
+    padding-right: 40px
+  }
+  header {
+    width: var(--smallwidth);
+  }
+  main {
+    width: var(--smallwidth)
+  }
+  footer {
+    width: var(--smallwidth)
+  }
+  header span:not(:last-child) {
+    margin-right: 15px;
+  }  
+  h1 {
+    font-size: 33px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  h3 {
+    font-size: 18.5px;
+  }
+  header > div:last-child {
+    font-size: 14px;
+  }
+  .TitleHeading {
+    font-size: 12px;
+  }
+  .AboutMe {
+    font-size: 12px;
+  }
+  footer {
+    font-size: 12px;
+  }
+  .TitleHeading {
+    height: 500px;
+  }
+  .TitleHeading > p {
+    height: 189px;
   }
 }
